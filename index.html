@@ -25,7 +25,7 @@
         <div id="container" class="pure-g-r">
             <div class="sidebar pure-u">
                 <a href="{{ base_url }}">
-                    <img src="{{ theme_url }}/images/logo.png" alt="{{ site_title }}" />
+                    <img id="logo" src="{{ theme_url }}/images/logo.png" alt="{{ site_title }}" />
                 </a>
                 <div class="pure-menu pure-menu-open pure-menu-custom header">
                     <input type="checkbox" id="toggle" />
@@ -43,6 +43,12 @@
 {% for page in pages %}
 {% if page.date and not(page.url == base_url~'/') %}
 		    <div class="post">
+                <div class="tags">
+                    <!-- display page tags with proper urls -->
+                    {% for tag in page.tags %}
+                            <a href="{{ base_url }}/tag/{{ tag }}">#{{ tag }}</a>
+                    {% endfor %}
+                </div> 
 		        <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
 		        <p class="meta">Published {{ page.date_formatted }}</p>
 		        <p class="excerpt">{{ page.excerpt }}</p>                
@@ -53,6 +59,12 @@
 		    <div class="post">
 {% if meta.title %}
 		        <h2>{{ meta.title }}</h2>
+                <div class="tags">
+                <!-- display single page tags with proper urls -->
+                {% for tag in meta.tags %}
+                    <a href="{{ base_url }}/tag/{{ tag }}">#{{ tag }}</a>
+                {% endfor %}
+        </div>
 {% endif %}
 {% if meta.date %}
 		        <p class="meta">Published {{ meta.date_formatted }}</p>
