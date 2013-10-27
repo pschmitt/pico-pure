@@ -1,24 +1,13 @@
 {% include "head.twig" %}
-    <body>        
         <div id="container" class="pure-g-r">
             {% include "sidebar.twig" with { 'logo': 'logo-pschmitt' } %}
 
             <div class="pure-u-1">
                 <div id="content">
                     <div class="post">
-                        <div class="tags">
-                             <!-- display single page tags with proper urls -->
-                            {% for tag in meta.tags %}
-                                <a href="{{ base_url }}/tag/{{ tag }}">#{{ tag }}</a>
-                            {% endfor %}
-                        </div>
-                        {% if meta.date %}
-                            <p class="meta">Published {{ meta.date_formatted }}</p>
-                        {% endif %}
                         {% spaceless %}{{ content }}{% endspaceless %}
                     </div>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+{% include "foot.twig" %}
