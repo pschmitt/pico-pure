@@ -1,0 +1,16 @@
+{% include "head.twig" %}
+    <body>        
+        <div id="container" class="pure-g-r">
+            {% include "sidebar.twig" %}
+
+            <div class="pure-u-1">
+                <div id="content">
+                    <div class="post">
+                            <?php echo 'Bonjour ' . htmlspecialchars($_POST["password"]) . '!'; ?>
+                        {{ login_form }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
