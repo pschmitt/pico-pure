@@ -6,8 +6,8 @@
         <input type="checkbox" id="toggle" />
         <label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu" onclick></label>
         <ul class="menu">
-        {% for page in pages %}
-            {% if not(page.date) and not(page.url == base_url~'/') and not(page.exclude == 'yes') %}
+        {% for page in pages | sort %}
+            {% if not(page.date) and not(page.url == base_url~'/') and page.navigation == 'yes' %}
                 <li><a href="{{ page.url }}">{{ page.title }}</a></li>
             {% endif %}
         {% endfor %}
