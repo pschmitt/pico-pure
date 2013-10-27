@@ -11,7 +11,7 @@
                 <div class="tags">
                     <!-- display page tags with proper urls -->
                     {% for tag in page.tags %}
-                            <a href="{{ base_url }}/tag/{{ tag }}">#{{ tag }}</a>
+                        <a href="{{ base_url }}/tag/{{ tag }}">#{{ tag }}</a>
                     {% endfor %}
                 </div> 
 		        <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
