@@ -1,4 +1,5 @@
 {% include "head.twig" %}
+{{ mcb_toc_top }}
         <div id="container" class="pure-g-r">
             {% include "sidebar.twig" %}
             <div class="pure-u-1">
@@ -33,6 +34,7 @@
 {% if meta.date %}
 		        <p class="meta">Published {{ meta.date_formatted }}</p>
 {% endif %}
+                {{ mcb_toc }}
 		        {% spaceless %}{{ content }}{% endspaceless %}
 				
 		    </div>
