@@ -9,12 +9,12 @@
 {% if page.date and not(page.url == base_url~'/') %}
 		    <div class="post">
                 <div class="tags">
+		        <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
                     <!-- display page tags with proper urls -->
                     {% for tag in page.tags %}
                         <a href="{{ base_url }}/tag/{{ tag }}">#{{ tag }}</a>
                     {% endfor %}
                 </div> 
-		        <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
 		        <p class="meta">Published {{ page.date_formatted }}</p>
 		        <p class="excerpt">{{ page.excerpt }}</p>                
 		    </div>
