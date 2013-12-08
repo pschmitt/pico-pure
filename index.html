@@ -5,39 +5,65 @@
             <div class="pure-u-1">
                 <div id="content">
 {% if is_front_page %}
-{% for page in pages %}
-{% if page.date and not(page.url == base_url~'/') %}
+    {% for page in pages %}
+        {% if page.date and not(page.url == base_url~'/') %}
 		    <div class="post">
-                <div class="tags">
 		        <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
-                    <!-- display page tags with proper urls -->
+                <p class="meta">Published {{ page.date_formatted }} by {{ page.author }}
+                    <span class="tags"><br />Tags:
+                        {% for tag in page.tags %}
+                                <a href="{{ base_url }}/tag/{{ tag }}">#{{ tag }}</a>
+                        {% endfor %}
+                    </span>
+                </p>
+		        <p class="excerpt">{{ page.excerpt }}</p>                
+		    </div>
+        {% endif %}
+    {% endfor %}
+{% elseif meta.tags %}
+    <div class="post">
+        {% if meta.title %}
+            <h2>{{ meta.title }}</h2>
+        {% endif %}
+        {% if meta.date %} <!-- single page  -->
+            <p class="meta">Published {{ meta.date_formatted }}
+                <span class="tags"><br />Tags:
+                    {% for tag in meta.tags %}
+                            <a href="{{ base_url }}/tag/{{ tag }}">#{{ tag }}</a>
+                    {% endfor %}
+                </span>
+            </p>
+        {% endif %}
+        {{ mcb_toc }}
+        {% spaceless %}{{ content }}{% endspaceless %}
+    </div>
+{% elseif pages and meta.title != 'Error 404' and meta.title != 'Projects' %}
+    <div class="post">
+    <!-- tags page -->
+    <h2>Posts tagged <a href="{{ page.url }}">#{{ current_tag }}</a>:</h2>
+    {% for page in pages %}
+        {% if page.date %}
+            <h3><a href="{{ page.url }}">{{ page.title }}</a></h3>
+            <p class="meta">Published {{ page.date_formatted }} by {{ page.author }}
+                <span class="tags"><br />Tags:
                     {% for tag in page.tags %}
                         <a href="{{ base_url }}/tag/{{ tag }}">#{{ tag }}</a>
                     {% endfor %}
-                </div> 
-		        <p class="meta">Published {{ page.date_formatted }}</p>
-		        <p class="excerpt">{{ page.excerpt }}</p>                
-		    </div>
-{% endif %}
-{% endfor %}
+                </span>
+            </p>
+            <p>
+                {{ page.excerpt }}
+            </p>
+        {% endif %}
+    {% endfor %}
+    </div> 
 {% else %}
-		    <div class="post">
-{% if meta.title %}
-		        <h2>{{ meta.title }}</h2>
-                <div class="tags">
-                <!-- display single page tags with proper urls -->
-                {% for tag in meta.tags %}
-                    <a href="{{ base_url }}/tag/{{ tag }}">#{{ tag }}</a>
-                {% endfor %}
-        </div>
-{% endif %}
-{% if meta.date %}
-		        <p class="meta">Published {{ meta.date_formatted }}</p>
-{% endif %}
-                {{ mcb_toc }}
-		        {% spaceless %}{{ content }}{% endspaceless %}
-				
-		    </div>
+    <!-- single page -->
+    <div class="post">
+        <h2>{{ meta.title }}</h2>
+        {{ content }}
+    </div class="post">
+    <!-- single page -->
 {% endif %}
                 </div>
             </div>

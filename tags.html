@@ -12,7 +12,7 @@
                             {% set uniqTags = [] %}
                             {% for page in pages %}
                                 <!-- display single page tags with proper urls -->
-                                {% for tag in page.tags | split (',') | sort %}
+                                {% for tag in page.tags %}
                                     {% if tag | e and tag not in uniqTags %}
                                         {% set uniqTags = uniqTags | merge([tag]) %}
                                     {% endif %}
