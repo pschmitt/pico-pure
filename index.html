@@ -19,7 +19,7 @@
                         {% endfor %}
                     </span>
                 </p>
-		        <p class="excerpt">{{ page.excerpt }}</p>                
+		        <p class="excerpt">{{ page.excerpt }}</p>
 		    </div>
         {% endif %}
     {% endfor %}
@@ -39,6 +39,7 @@
         {% endif %}
         {{ mcb_toc }}
         {% spaceless %}{{ content }}{% endspaceless %}
+        {{ disqus_comments }}
     </div>
 {% elseif pages and meta.title != 'Error 404' and meta.title != 'Projects' %}
     <div class="post">
@@ -59,7 +60,7 @@
             </p>
         {% endif %}
     {% endfor %}
-    </div> 
+    </div>
 {% else %}
     <!-- single page -->
     <div class="post">
