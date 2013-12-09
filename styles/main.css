@@ -136,12 +136,20 @@ div.tags {
     margin-top: 1.5em;
 }
 
+ul.menu li:hover {
+    background: #1abc9c;
+}
+
+ul.menu a:hover {
+    color: white;
+}
+
 .nav_current {
     background: #1abc9c;
 }
 
 li.nav_current a:hover {
-    background: lightgray;
+    background: #159e83;
 }
 
 div#banner {
