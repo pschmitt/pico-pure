@@ -3,6 +3,9 @@
         <div id="container" class="pure-g-r">
             {% include "sidebar.twig" %}
             <div class="pure-u-1">
+                {% if meta.title == 'Projects' %}
+                    {% include "job-banner.twig" %}
+                {% endif %}
                 <div id="content">
 {% if is_front_page %}
     {% for page in pages %}

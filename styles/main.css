@@ -135,3 +135,25 @@ span.tags a {
 div.tags {
     margin-top: 1.5em;
 }
+
+.nav_current {
+    background: #1abc9c;
+}
+
+li.nav_current a:hover {
+    background: lightgray;
+}
+
+div#banner {
+    background: red;
+    width: 100%;
+    line-height: 2em;
+    margin: auto;
+}
+
+div#banner p {
+    text-align: center; 
+    width: 100%;
+    margin: 0;
+    font-weight: 700;
+}
