@@ -1,5 +1,4 @@
 {% include "head.twig" %}
-{{ mcb_toc_top }}
         <div id="container" class="pure-g-r">
             {% include "sidebar.twig" %}
             <div class="pure-u-1">
@@ -25,6 +24,7 @@
     {% endfor %}
 {% elseif meta.tags %}
     <div class="post">
+        {{ mcb_toc_top }}
         {% if meta.title %}
             <h2>{{ meta.title }}</h2>
         {% endif %}
