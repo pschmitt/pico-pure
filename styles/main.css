@@ -27,7 +27,7 @@ h3 {
     text-decoration: none;
 }
 
-#container {  
+#container {
     padding-left: 16em;
 }
 
@@ -67,7 +67,7 @@ pre {
 	-webkit-transition: all 0.4s linear;
 	-moz-transition: all 0.4s linear;
 	-o-transition: all 0.4s linear;
-	transition: all 0.4s linear;    
+	transition: all 0.4s linear;
 }
 
 .pure-menu-custom a, .pure-menu-custom .pure-menu-can-have-children>li:after {
@@ -111,12 +111,12 @@ blockquote {
         margin: 0;
         background: #161616;
         padding-top: 2em;
-    }    
-    
+    }
+
     #container {
         padding: 0;
     }
-    
+
     .pure-menu-custom ul {
         margin-top: 0;
     }
@@ -160,8 +160,48 @@ div#banner {
 }
 
 div#banner p {
-    text-align: center; 
+    text-align: center;
     width: 100%;
     margin: 0;
     font-weight: 700;
+}
+
+h1.technique-three {
+  width: 350px;
+  height: 75px;
+  background: url("images/header-image.jpg");
+  text-indent: -9999px;
+}
+
+div#share {
+    text-align: center;
+    width: 100%;
+    margin: 1.5em 0 1.5em 0;
+}
+
+/* Social */
+.btn-twitter, .btn-facebook, .btn-google {
+    margin-right: 0.5em;
+}
+
+.btn-twitter:before, .btn-facebook:before, .btn-google:before {
+    font-family: FontAwesome;
+    display: inline-block;
+    margin-right: 0.1em;
+    font-size: 0.85em;
+}
+
+.btn-twitter:before {
+    content: "\f081";
+    color: #4099FF;
+}
+
+.btn-facebook:before {
+    content: "\f082";
+    color: #3B5998;
+}
+
+.btn-google:before {
+    content: "\f0d4";
+    color: #dd4b39;
 }

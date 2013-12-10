@@ -6,7 +6,7 @@
         <input type="checkbox" id="toggle" />
         <label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu" onclick></label>
         <ul class="menu">
-            <li><a href="{{ base_url }}/feed">Feed <img width="12" height="12" src="{{ theme_url }}/images/rss.png"/></a></li>
+            <li><a href="{{ base_url }}/feed">Feed <i class="fa fa-rss-square"></i></a></li>
             <li{{ meta.title == 'Tags' ? ' class="nav_current"' : ''}} class="current_item"><a href="{{ base_url }}/tags">Tags</a></li>
             <li{{ meta.title == 'Projects' ? ' class="nav_current"' : '' }}><a href="{{ base_url }}/projects">Projects</a></li>
             <li{{ meta.title == 'About' ? ' class="nav_current"' : '' }}><a href="{{ base_url }}/about">About</a></li>

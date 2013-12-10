@@ -39,6 +39,7 @@
         {% endif %}
         {{ mcb_toc }}
         {% spaceless %}{{ content }}{% endspaceless %}
+        {{ social_share }}
         {{ disqus_comments }}
     </div>
 {% elseif pages and meta.title != 'Error 404' and meta.title != 'Projects' %}
