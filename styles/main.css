@@ -184,6 +184,11 @@ div#share {
     margin-right: 0.5em;
 }
 
+.btn-twitter:hover, .btn-facebook:hover, .btn-google:hover {
+    display: inline-block;
+    text-decoration: none;
+}
+
 .btn-twitter:before, .btn-facebook:before, .btn-google:before {
     font-family: FontAwesome;
     display: inline-block;
@@ -193,15 +198,24 @@ div#share {
 
 .btn-twitter:before {
     content: "\f081";
+}
+
+.btn-twitter:hover {
     color: #4099FF;
 }
 
 .btn-facebook:before {
     content: "\f082";
+}
+
+.btn-facebook:hover {
     color: #3B5998;
 }
 
 .btn-google:before {
     content: "\f0d4";
+}
+
+.btn-google:hover {
     color: #dd4b39;
 }
