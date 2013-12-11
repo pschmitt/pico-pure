@@ -8,6 +8,11 @@ a {
     text-decoration: none;
 }
 
+/* Firefox: Prevent drawing the dotted focus lines */
+a:focus { 
+    outline: none; 
+}
+
 h2 {
     font-size: 1.6em;
     font-weight: 700;
