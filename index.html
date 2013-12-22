@@ -12,6 +12,9 @@
 		    <div class="post">
 		        <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
                 <p class="meta">Published {{ page.date_formatted }} by {{ page.author }}
+                    {% if page.updated %}
+                        (Updated {{ page.updated }})
+                    {% endif %}
                     <span class="tags"><br />Tags:
                         {% for tag in page.tags %}
                             <a href="{{ base_url }}/tag/{{ tag }}">#{{ tag }}</a>
@@ -30,6 +33,9 @@
         {% endif %}
         {% if meta.date %} <!-- single page  -->
             <p class="meta">Published {{ meta.date_formatted }}
+                {% if meta.updated %}
+                    (Updated {{ meta.updated }})
+                {% endif %}
                 <span class="tags"><br />Tags:
                     {% for tag in meta.tags %}
                         <a href="{{ base_url }}/tag/{{ tag }}">#{{ tag }}</a>
