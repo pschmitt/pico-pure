@@ -13,23 +13,29 @@ a:focus {
     outline: none; 
 }
 
-h2 {
+h1 {
     font-size: 1.6em;
-    font-weight: 700;
+    font-weight: 800;
     line-height: 1em;
     margin: 0;
 }
 
-h2 + p.meta {
+h1 + p.meta {
     margin-top: 0.5em;
+}
+
+h2 {
+    font-size: 1.4em;
+    font-weight: 700;
+    line-height: 1em;
+    margin: 1.5em 0 0.4em 0;
+    text-decoration: none;
 }
 
 h3 {
     font-size: 1.2em;
     font-weight: 600;
-    line-height: 1em;
-    margin: 1.5em 0 0.4em 0;
-    text-decoration: none;
+    margin: 1.2em 0;
 }
 
 /* Source: http://stackoverflow.com/questions/7273927/image-greyscale-with-css-re-color-on-mouse-over */
@@ -125,7 +131,7 @@ pre {
     text-decoration: underline;
 }
 
-.post>h2 a {
+.post>h1 a {
     text-decoration: none;
 }
 

@@ -10,7 +10,7 @@
     {% for page in pages %}
         {% if page.date and not(page.url == base_url~'/') %}
 		    <div class="post">
-		        <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
+		        <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
                 <p class="meta">Published {{ page.date_formatted }} by {{ page.author }}
                     <span class="tags"><br />Tags:
                         {% for tag in page.tags %}
@@ -26,7 +26,7 @@
     <div class="post">
         {{ mcb_toc_top }}
         {% if meta.title %}
-            <h2>{{ meta.title }}</h2>
+            <h1>{{ meta.title }}</h1>
         {% endif %}
         {% if meta.date %} <!-- single page  -->
             <p class="meta">Published {{ meta.date_formatted }}
@@ -45,10 +45,10 @@
 {% elseif pages and meta.title != 'Error 404' and meta.title != 'Projects' %}
     <div class="post">
     <!-- tags page -->
-    <h2>Posts tagged <a href="{{ page.url }}">#{{ current_tag }}</a>:</h2>
+    <h1>Posts tagged <a href="{{ page.url }}">#{{ current_tag }}</a>:</h1>
     {% for page in pages %}
         {% if page.date %}
-            <h3><a href="{{ page.url }}">{{ page.title }}</a></h3>
+            <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
             <p class="meta">Published {{ page.date_formatted }} by {{ page.author }}
                 <span class="tags"><br />Tags:
                     {% for tag in page.tags %}
@@ -65,7 +65,7 @@
 {% else %}
     <!-- single page -->
     <div class="post">
-        <h2>{{ meta.title }}</h2>
+        <h1>{{ meta.title }}</h1>
         {{ content }}
     </div class="post">
     <!-- single page -->
