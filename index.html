@@ -6,38 +6,19 @@
                     {% include "job-banner.twig" %}
                 {% endif %}
                 <div id="content">
-{% if is_front_page %}
-    {% for page in pages %}
-        {% if page.date and not(page.url == base_url~'/') %}
-		    <div class="post">
-		        <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
-                <p class="meta">Published {{ page.date_formatted }} by {{ page.author }}
-                    {% if page.updated %}
-                        (Updated {{ page.updated }})
-                    {% endif %}
-                    <span class="tags"><br />Tags:
-                        {% for tag in page.tags %}
-                            <a href="{{ base_url }}/tag/{{ tag }}">#{{ tag }}</a>
-                        {% endfor %}
-                    </span>
-                </p>
-		        <p class="excerpt">{{ page.excerpt }}</p>
-		    </div>
-        {% endif %}
-    {% endfor %}
-{% elseif meta.tags %}
+{% if meta.tags %}
     <div class="post">
         {{ mcb_toc_top }}
         {% if meta.title %}
             <h1>{{ meta.title }}</h1>
         {% endif %}
         {% if meta.date %} <!-- single page  -->
-            <p class="meta">Published {{ meta.date_formatted }}
+            <p class="meta">Published {{ page.meta.date|date(config.date_format) }}
                 {% if meta.updated %}
                     (Updated {{ meta.updated }})
                 {% endif %}
                 <span class="tags"><br />Tags:
-                    {% for tag in meta.tags %}
+                    {% for tag in meta.tags|split(',') %}
                         <a href="{{ base_url }}/tag/{{ tag }}">#{{ tag }}</a>
                     {% endfor %}
                 </span>
