@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>{% if not(is_front_page) %}{{ meta.title }} | {% endif %}{{ site_title }}</title>
+        <title>{% if not(meta.title == "Blog") %}{{ meta.title }} | {% endif %}{{ site_title }}</title>
 {% if meta.description %}
         <meta name="description" content="{{ meta.description }}">
 {% endif %}
@@ -33,6 +33,7 @@
         <link rel="stylesheet" href="{{ theme_url }}/css/zenburn.css">
         <script src="{{ theme_url }}/js/vendor/highlight.pack.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
+        <!-- Google Analytics -->
         {{ googletrackingcode }}
     </head>
     <body>
