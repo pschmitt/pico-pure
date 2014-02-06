@@ -7,9 +7,9 @@
                         {% if page.meta.date %}
                             <div class="post">
                                 <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
-                                <p class="meta">Published {{ page.meta.date_formatted }} by {{ page.meta.author }}
+                                <p class="meta">Published {{ page.meta.date|date(config.date_format) }} by {{ page.meta.author }}
                                     {% if page.meta.updated %}
-                                        (Updated {{ page.meta.updated }})
+                                        (Updated {{ page.meta.updated|date(config.date_format) }})
                                     {% endif %}
                                     <span class="tags"><br />Tags:
                                         {% for tag in page.meta.tags|split(',') %}

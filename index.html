@@ -8,14 +8,14 @@
                 <div id="content">
 {% if meta.tags %}
     <div class="post">
-        {{ mcb_toc_top }}
+        {{ toc_top }}
         {% if meta.title %}
             <h1>{{ meta.title }}</h1>
         {% endif %}
         {% if meta.date %} <!-- single page  -->
             <p class="meta">Published {{ page.meta.date|date(config.date_format) }}
                 {% if meta.updated %}
-                    (Updated {{ meta.updated }})
+                    (Updated {{ page.meta.updated|date(config.date_format) }})
                 {% endif %}
                 <span class="tags"><br />Tags:
                     {% for tag in meta.tags|split(',') %}
@@ -24,7 +24,7 @@
                 </span>
             </p>
         {% endif %}
-        {{ mcb_toc }}
+        {{ toc }}
         {% spaceless %}{{ content }}{% endspaceless %}
         {{ social_share }}
         {{ disqus_comments }}
@@ -34,9 +34,9 @@
     <!-- tags page -->
     <h1>Posts tagged <a href="{{ page.url }}">#{{ current_tag }}</a>:</h1>
     {% for page in pages %}
-        {% if page.date %}
+        {% if page.meta.date %}
             <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
-            <p class="meta">Published {{ page.date_formatted }} by {{ page.author }}
+            <p class="meta">Published {{ page.meta.date|date(config.date_format) }} by {{ page.author }}
                 <span class="tags"><br />Tags:
                     {% for tag in page.tags %}
                         <a href="{{ base_url }}/tag/{{ tag }}">#{{ tag }}</a>
