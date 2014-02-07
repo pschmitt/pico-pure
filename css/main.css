@@ -225,13 +225,13 @@ h1.technique-three {
   text-indent: -9999px;
 }
 
+/* Social */
 div#share {
     text-align: center;
     width: 100%;
     margin: 1.5em 0 1.5em 0;
 }
 
-/* Social */
 .btn-twitter, .btn-facebook, .btn-google {
     margin-right: 0.5em;
 }
@@ -270,6 +270,15 @@ div#share {
 
 .btn-google:hover {
     color: #dd4b39;
+}
+
+/* Comments */
+#show-comments-wrapper {
+    text-align: center;    
+}
+
+a.show-comments {
+    text-decoration: none;
 }
 
 #stalk-section a, div#share a {
