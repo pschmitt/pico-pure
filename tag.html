@@ -1,0 +1,30 @@
+{% include "head.twig" %}
+        <div id="container" class="pure-g-r">
+            {% include "sidebar.twig" %}
+            <div class="pure-u-1">
+                <div id="content">
+                    <!-- tag/ page -->
+                    <div class="post">
+                        <h1>Posts tagged <a href="{{ page.url }}">#{{ current_tag }}</a>:</h1>
+                        {% for page in pages %}
+                            {% if current_tag in page.meta.tags %}
+                                <h2><a href="{{ base_url }}/{{ page.url }}">{{ page.title }}</a></h2>
+                                <p class="meta">Published {{ page.meta.date|date(config.date_format) }} by {{ page.meta.author }}
+                                    <span class="tags"><br />Tags:
+                                        {% for tag in page.meta.tags %}
+                                            <a href="{{ base_url }}/tag/{{ tag }}">#{{ tag }}</a>
+                                        {% endfor %}
+                                    </span>
+                                </p>
+                                <p class="excerpt">
+                                    {{ page.content|striptags|slice(0, 300) }}…&nbsp;
+                                    <a href="{{ page.url }}" title="{{ page.title }}" class="btn">Read&nbsp;More</a>
+                                </p>
+                            {% endif %}
+                        {% endfor %}
+                    </div class="post">
+                    <!-- tag/ page -->
+                </div>
+            </div>
+        </div>
+{% include "foot.twig" %}

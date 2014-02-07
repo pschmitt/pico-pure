@@ -18,7 +18,7 @@
                     (Updated {{ page.meta.updated|date(config.date_format) }})
                 {% endif %}
                 <span class="tags"><br />Tags:
-                    {% for tag in meta.tags|split(',') %}
+                    {% for tag in meta.tags %}
                         <a href="{{ base_url }}/tag/{{ tag }}">#{{ tag }}</a>
                     {% endfor %}
                 </span>
