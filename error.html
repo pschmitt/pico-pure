@@ -3,23 +3,10 @@
             {% include "sidebar.twig" %}
             <div class="pure-u-1">
                 <div id="content">
-                    <!-- tag/ page -->
                     <div class="post">
                         <h1>{{ meta.title }}</h1>
-                        Matching: {{ current_tag }}
-                        <br/>
-                        <br/>
-                        {% for page in pages %}
-                            {% if current_tag in page.meta.tags %}
-                                {{ page.title }}
-                                {% for tag in page.meta.tags %}
-                                    ( {{ tag }} )
-                                {% endfor %}
-                                <br/>
-                            {% endif %}
-                        {% endfor %} 
+                        {{ content }}
                     </div class="post">
-                    <!-- tag/ page -->
                 </div>
             </div>
         </div>
