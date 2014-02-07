@@ -1,0 +1,15 @@
+{% include "head.twig" %}
+        <div id="container" class="pure-g-r">
+            {% include "sidebar.twig" %}
+            <div class="pure-u-1">
+                <div id="content">
+                    <!-- tag/ page -->
+                    <div class="post">
+                        <h1>{{ meta.title }}</h1>
+                        {{ content }}
+                    </div class="post">
+                    <!-- tag/ page -->
+                </div>
+            </div>
+        </div>
+{% include "foot.twig" %}

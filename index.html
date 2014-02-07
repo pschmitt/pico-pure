@@ -6,7 +6,7 @@
                     {% include "job-banner.twig" %}
                 {% endif %}
                 <div id="content">
-{% if meta.tags %}
+{% if meta.date %}
     <div class="post">
         {{ toc_top }}
         {% if meta.title %}
@@ -29,7 +29,7 @@
         {{ social_share }}
         {{ disqus_comments }}
     </div>
-{% elseif pages and meta.title != 'Error 404' and meta.title != 'Projects' %}
+{% elseif pages and meta.title != 'Projects' %}
     <div class="post">
     <!-- tags page -->
     <h1>Posts tagged <a href="{{ page.url }}">#{{ current_tag }}</a>:</h1>
@@ -50,12 +50,12 @@
     {% endfor %}
     </div>
 {% else %}
-    <!-- single page -->
+    <!-- tag/ page -->
     <div class="post">
         <h1>{{ meta.title }}</h1>
         {{ content }}
     </div class="post">
-    <!-- single page -->
+    <!-- tag/ page -->
 {% endif %}
                 </div>
             </div>
