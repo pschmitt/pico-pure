@@ -1,4 +1,4 @@
-{% include "head.twig" %}
+{% include "head.twig" with { 'homepage' : 'true' } %}
         <div id="container" class="pure-g-r">
             {% include "sidebar.twig" %}
             <div class="pure-u-1">
@@ -24,6 +24,8 @@
                                     <a href="{{ page.url }}" title="{{ page.title }}" class="btn">Read&nbsp;More</a>
                                 </p>
                             </div>
+                        {% else %}
+                            {{ page.title }}
                         {% endif %}
                     {% endfor %}
                 </div>
