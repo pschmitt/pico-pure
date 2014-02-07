@@ -2,18 +2,7 @@
         <div id="container" class="pure-g-r">
             {% include "sidebar.twig" %}
             <div class="pure-u-1">
-                {% if meta.title == 'Projects' %}
-                    {% include "job-banner.twig" %}
-                {% endif %}
                 <div id="content">
-                {% if meta.title ==  'Projects' %}
-                    <!-- tag/ page -->
-                    <div class="post">
-                        <h1>{{ meta.title }}</h1>
-                        {{ content }}
-                    </div class="post">
-                    <!-- tag/ page -->
-                {% else %}
                     <div class="post">
                         {{ toc_top }}
                         {% if meta.title %}
@@ -36,7 +25,6 @@
                         {{ social_share }}
                         {{ disqus_comments }}
                     </div>
-                {% endif %}
                 </div>
             </div>
         </div>
