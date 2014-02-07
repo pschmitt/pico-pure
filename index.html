@@ -6,57 +6,37 @@
                     {% include "job-banner.twig" %}
                 {% endif %}
                 <div id="content">
-{% if meta.date %}
-    <div class="post">
-        {{ toc_top }}
-        {% if meta.title %}
-            <h1>{{ meta.title }}</h1>
-        {% endif %}
-        {% if meta.date %} <!-- single page  -->
-            <p class="meta">Published {{ meta.date|date(config.date_format) }}
-                {% if meta.updated %}
-                    (Updated {{ meta.updated|date(config.date_format) }})
+                {% if meta.title ==  'Projects' %}
+                    <!-- tag/ page -->
+                    <div class="post">
+                        <h1>{{ meta.title }}</h1>
+                        {{ content }}
+                    </div class="post">
+                    <!-- tag/ page -->
+                {% else %}
+                    <div class="post">
+                        {{ toc_top }}
+                        {% if meta.title %}
+                            <h1>{{ meta.title }}</h1>
+                        {% endif %}
+                        {% if meta.date %} <!-- single page  -->
+                            <p class="meta">Published {{ meta.date|date(config.date_format) }}
+                                {% if meta.updated %}
+                                    (Updated {{ page.meta.updated|date(config.date_format) }})
+                                {% endif %}
+                                <span class="tags"><br />Tags:
+                                    {% for tag in meta.tags %}
+                                        <a href="{{ base_url }}/tag/{{ tag }}">#{{ tag }}</a>
+                                    {% endfor %}
+                                </span>
+                            </p>
+                        {% endif %}
+                        {{ toc }}
+                        {% spaceless %}{{ content }}{% endspaceless %}
+                        {{ social_share }}
+                        {{ disqus_comments }}
+                    </div>
                 {% endif %}
-                <span class="tags"><br />Tags:
-                    {% for tag in meta.tags %}
-                        <a href="{{ base_url }}/tag/{{ tag }}">#{{ tag }}</a>
-                    {% endfor %}
-                </span>
-            </p>
-        {% endif %}
-        {{ toc }}
-        {% spaceless %}{{ content }}{% endspaceless %}
-        {{ social_share }}
-        {{ disqus_comments }}
-    </div>
-{% elseif pages and meta.title != 'Projects' %}
-    <div class="post">
-    <!-- tags page -->
-    <h1>Posts tagged <a href="{{ page.url }}">#{{ current_tag }}</a>:</h1>
-    {% for page in pages %}
-        {% if page.meta.date %}
-            <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
-            <p class="meta">Published {{ page.meta.date|date(config.date_format) }} by {{ page.author }}
-                <span class="tags"><br />Tags:
-                    {% for tag in page.tags %}
-                        <a href="{{ base_url }}/tag/{{ tag }}">#{{ tag }}</a>
-                    {% endfor %}
-                </span>
-            </p>
-            <p>
-                {{ page.excerpt }}
-            </p>
-        {% endif %}
-    {% endfor %}
-    </div>
-{% else %}
-    <!-- tag/ page -->
-    <div class="post">
-        <h1>{{ meta.title }}</h1>
-        {{ content }}
-    </div class="post">
-    <!-- tag/ page -->
-{% endif %}
                 </div>
             </div>
         </div>
