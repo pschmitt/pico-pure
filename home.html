@@ -11,11 +11,13 @@
                                     {% if page.meta.updated %}
                                         (Updated {{ page.meta.updated|date(config.date_format) }})
                                     {% endif %}
-                                    <span class="tags"><br />Tags:
-                                        {% for tag in page.meta.tags|split(',') %}
-                                            <a href="{{ base_url }}/tag/{{ tag }}">#{{ tag }}</a>
-                                        {% endfor %}
-                                    </span>
+                                    {% if page.meta.tags %}
+                                        <span class="tags"><br />Tags:
+                                            {% for tag in page.meta.tags|split(',') %}
+                                                <a href="{{ base_url }}/tag/{{ tag }}">#{{ tag }}</a>
+                                            {% endfor %}
+                                        </span>
+                                    {% endif %}
                                 </p>
                                 <p class="excerpt">
                                     {{ page.content|striptags|slice(0, 300) }}…&nbsp;
