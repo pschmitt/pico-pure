@@ -20,7 +20,7 @@
                                     {% endif %}
                                 </p>
                                 <p class="excerpt">
-                                    {{ page.content|striptags|slice(0, 300) }}…&nbsp;
+                                    {{ page.content|toc_excerpt }}…&nbsp;
                                     <a href="{{ page.url }}" title="{{ page.title }}" class="btn">Read&nbsp;More</a>
                                 </p>
                             </div>
