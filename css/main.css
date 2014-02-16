@@ -9,8 +9,8 @@ a {
 }
 
 /* Firefox: Prevent drawing the dotted focus lines */
-a:focus { 
-    outline: none; 
+a:focus {
+    outline: none;
 }
 
 h1 {
@@ -82,7 +82,7 @@ img#logo:hover {
 }
 
 .sidebar ul li {
-    margin: 0 auto;  
+    margin: 0 auto;
     width: 50%;
     padding: 0 25%;
 }*/
@@ -108,10 +108,10 @@ pre {
 .pure-menu-custom li a:hover,.pure-menu-custom li a:focus, a:hover, a:focus {
     background: none;
     color: #1abc9c;
-	-webkit-transition: all 0.4s linear;
-	-moz-transition: all 0.4s linear;
-	-o-transition: all 0.4s linear;
-	transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+    transition: all 0.4s linear;
 }
 
 .pure-menu-custom a, .pure-menu-custom .pure-menu-can-have-children>li:after {
@@ -174,7 +174,7 @@ blockquote {
     #content {
         padding: 2em 1em 0;
     }
-    
+
     .sidebar li a {
         padding-left: 9em;
     }
@@ -274,7 +274,7 @@ div#share {
 
 /* Comments */
 #show-comments-wrapper {
-    text-align: center;    
+    text-align: center;
 }
 
 a.show-comments {
@@ -325,3 +325,4 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
 #stalk-section .xing a:hover {
     color: #126567;
 }
+
