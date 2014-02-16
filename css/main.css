@@ -326,3 +326,15 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
     color: #126567;
 }
 
+/* Private section */
+#logout-form button {
+    background-color: crimson;
+}
+
+#login-form button {
+    background-color: #1abc9c;
+}
+
+#update-table thead {
+    text-align: center;
+}
