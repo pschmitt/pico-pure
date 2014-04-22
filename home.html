@@ -11,9 +11,9 @@
                                     {% if page.meta.updated %}
                                         (Updated {{ page.meta.updated|date(config.date_format) }})
                                     {% endif %}
-                                    {% if page.meta.tags %}
+                                    {% if page.meta.tags_array %}
                                         <span class="tags"><br />Tags:
-                                            {% for tag in page.meta.tags %}
+                                            {% for tag in page.meta.tags_array %}
                                                 <a href="{{ base_url }}/tag/{{ tag }}">#{{ tag }}</a>
                                             {% endfor %}
                                         </span>

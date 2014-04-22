@@ -7,11 +7,11 @@
                     <div class="post">
                         <h1>Posts tagged <a href="{{ page.url }}">#{{ current_tag }}</a>:</h1>
                         {% for page in pages %}
-                            {% if current_tag in page.meta.tags %}
+                            {% if current_tag in page.meta.tags_array %}
                                 <h2><a href="{{ base_url }}/{{ page.url }}">{{ page.title }}</a></h2>
                                 <p class="meta">Published {{ page.meta.date|date(config.date_format) }} by {{ page.meta.author }}
                                     <span class="tags"><br />Tags:
-                                        {% for tag in page.meta.tags %}
+                                        {% for tag in page.meta.tags_array %}
                                             <a href="{{ base_url }}/tag/{{ tag }}">#{{ tag }}</a>
                                         {% endfor %}
                                     </span>
