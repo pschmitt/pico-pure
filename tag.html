@@ -12,7 +12,7 @@
                                 <p class="meta">Published {{ page.meta.date|date(config.date_format) }} by {{ page.meta.author }}
                                     <span class="tags"><br />Tags:
                                         {% for tag in page.meta.tags_array %}
-                                            <a href="{{ base_url }}/tag/{{ tag }}">#{{ tag }}</a>
+                                            <a href="{{ base_url }}/tag/{{ tag | url_encode }}">#{{ tag }}</a>
                                         {% endfor %}
                                     </span>
                                 </p>

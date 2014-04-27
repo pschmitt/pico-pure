@@ -19,7 +19,7 @@
                                 {% endfor %}
                             {% endfor %}
                             {% for tag in uniqTags | sort %}
-                                <a href="{{ base_url }}/tag/{{ tag }}">#{{ tag }}</a>
+                                <a href="{{ base_url }}/tag/{{ tag | url_encode}}">#{{ tag }}</a>
                                 <br/>
                             {% endfor %}
                         </div>
