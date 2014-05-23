@@ -338,3 +338,10 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
 #update-table thead {
     text-align: center;
 }
+
+code {
+    font-family: monospace;
+    font-size: 85%;
+    padding: .2em;
+    background: lightgray;
+}
